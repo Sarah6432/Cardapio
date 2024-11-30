@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="../public/stylesheets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
@@ -19,12 +23,12 @@
         <nav id="navbar">
             <div class="nav-logo">
                 <i id="nav_logo" class="fa-solid fa-plate-wheat"></i>
-                <p class="nav-text">Aromas</p>
+                <p class="nav-text"><a href="#home">Aromas</a></p>
             </div>
             <ul id="nav-list">
-                <li class="nav-item active"><a href="#home">Início</a></li>
-                <li class="nav-item"><a href="#promo">Promoções</a></li>
-                <li class="nav-item"><a href="#avaliacoes">Avaliações</a></li>
+                <li class="nav-item"><a href="#home">Início</a></li>
+                <li class="nav-item"><a href="#menu">Cardápio</a></li>
+                <li class="nav-item"><a href="#rodizio">Rodízio</a></li>
             </ul>
             <button class="btn-default">Peça Aqui</button>
             <button id="mobile_btn"><i class="fa-solid fa-bars"></i></button>
@@ -33,14 +37,14 @@
         <div id="mobile_menu">
             <ul id="mobile_nav-list">
                 <li class="nav-item"><a href="#home">Início</a></li>
-                <li class="nav-item"><a href="#promo">Promoções</a></li>
-                <li class="nav-item"><a href="#avaliacoes">Avaliações</a></li>
+                <li class="nav-item"><a href="#menu">Cardápio</a></li>
+                <li class="nav-item"><a href="#rodizio">Rodízio</a></li>
             </ul>
             <button class="btn-default">Peça Aqui</button>
         </div>
     </header>
 
-    <main id="content">
+    <main id="content" class="principal">
         <section id="home">
             <div class="details">
                 <div class="shape"></div>
@@ -50,7 +54,7 @@
                     </div>
                     <p class="description">Sabores que conquistam. Experiências que encantam.</p>
                     <div id="cta_buttons">
-                        <a href="#" class="btn-default">Ver cardápio</a>
+                        <a href="#" class="btn-default">Sobre nós</a>
                         <a href="tel:+551199999999" id="phone_button">
                             <button class="btn-default">
                                 <i class="fa-solid fa-phone"></i>
@@ -71,9 +75,9 @@
         </section>
 
         <section id="menu" data-aos="fade-up">
-            <h2 class="section-title" data-aos="fade-up">Cardápio</h2>
-            <h3 class="section-subtitle" data-aos="fade-up">Nossos pratos especiais</h3>
-            <div id="dishes" class="slick-carousel" data-aos="fade-up">
+            <h2 class="section-title" >Cardápio</h2>
+            <h3 class="section-subtitle" ">Nossos pratos especiais</h3>
+            <div id="dishes" class="slick-carousel" >
                 <div class="dish">
                     <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
                     <div class="imagem">
@@ -240,7 +244,7 @@
                 <div class="card" id="principais">
                     <img src="../public/images/comida0.1.png" alt="Penne ao Pesto Cremoso">
                     <h3>Penne ao Pesto Cremoso</h3>
-                    <p>Penne, manjericão, nozes trituradas, creme de leite, azeite.</p>
+                    <p>Penne, manjericão, nozes trituradas, creme de leite.</p>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
 
@@ -301,7 +305,8 @@
                 <div class="card" id="sobremesa">
                     <img src="../public/images/comida15.png" alt="Temaki">
                     <h3>Tortilha Doce de Morango</h3>
-                    <p>Tortilhas crocantes recheadas com morangos caramelizados e creme suave, finalizadas com uma calda doce.</p>
+                    <p>Tortilhas crocantes recheadas com morangos caramelizados e creme suave, finalizadas com uma calda
+                        doce.</p>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="sobremesa">
@@ -313,19 +318,22 @@
                 <div class="card" id="bebidas">
                     <img src="../public/images/comida0.9.png" alt="Temaki">
                     <h3>Refresco do Sol</h3>
-                    <p>Uma combinação vibrante de suco de laranja fresco e melancia gelada, trazendo o sabor doce e cítrico do verão.</p>
+                    <p>Uma combinação vibrante de suco de laranja fresco e melancia gelada, trazendo o sabor doce e
+                        cítrico do verão.</p>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="bebidas">
                     <img src="../public/images/comida10.png" alt="Temaki">
                     <h3>Limão Supreme</h3>
-                    <p>Suco de limão com toque equilibrado entre o azedinho e o doce, com folhas de hortelã para um frescor extra.</p>
+                    <p>Suco de limão com toque equilibrado entre o azedinho e o doce, com folhas de hortelã para um
+                        frescor extra.</p>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="bebidas">
                     <img src="../public/images/comida11.png" alt="Temaki">
                     <h3>Explosão Morango Picante</h3>
-                    <p>Um mix ousado de morango fresco e pimenta suave, criando um contraste de sabores doce e levemente ardente.</p>
+                    <p>Um mix ousado de morango fresco e pimenta suave, criando um contraste de sabores doce e levemente
+                        ardente.</p>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="bebidas">
@@ -336,23 +344,39 @@
                 </div>
             </div>
         </section>
-        <section class="menu-section" data-aos="fade-up">
+        <div class="carousel" id="rodizio" data-aos="fade-up">
+            <div class="slide">
+                <img src="../public/images/slide1.0.png" alt="Slide 1">
+                <div class="slide-content">
+                    <h1>Rodízios Aromas</h1>
+                    <button class="btn-carousel">Ver Menu</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../public/images/slide2.0.png" alt="Slide 2">
+                <div class="slide-content">
+                    <h1>Faça uma reserva</h1>
+                    <button class="btn-carousel">Saiba Mais</button>
+                </div>
+            </div>
+        </div>
+        <section class="menu-section" id="horarios">
             <div>
-                <h1 class="titulo" data-aos="fade-up">Nossos Horários</h1>
+                <h1 class="titulo">Nossos Horários</h1>
                 <div class="menu-container">
-                    <div class="menu-item" data-aos="fade-up">
+                    <div class="menu-item">
                         <img src="../public/images/almo.png" alt="Ícone Almoço">
                         <h3>Almoço</h3>
                         <p>11:30 às 15 horas</p>
                     </div>
                     <div class="divisor"></div>
-                    <div class="menu-item" data-aos="fade-up">
+                    <div class="menu-item">
                         <img src="../public/images/jan.png" alt="Ícone Jantar">
                         <h3>Jantar</h3>
                         <p>18:00 às 23 horas</p>
                     </div>
                     <div class="divisor"></div>
-                    <div class="menu-item" data-aos="fade-up">
+                    <div class="menu-item">
                         <img src="../public/images/sobrem.png" alt="Ícone Sobremesas">
                         <h3>Sobremesas</h3>
                         <p>Grátis</p>
@@ -360,8 +384,125 @@
                 </div>
             </div>
         </section>
-
-
+        <section class="promocoes"  id="promo" data-aos="fade-up">
+            <h2 class="titulo-promocoes">Promoções</h2>
+            <div class="promo-cards">
+                <div class="promo-card">
+                    <img src="../public/images/promo3.png" alt="Promoção Aniversário" class="card-img">
+                    <div class="card-content">
+                        <h3>Aromas</h3>
+                        <h4 class="detalhes">Aniversário com 30% de desconto</h4>
+                        <p class="detalhes">Temos um presente para você, 30% de desconto nas compras em nosso
+                            restaurante, no dia do seu
+                            aniversário. Venha comemorar conosco!</p>
+                        <a href="#" class="btn">Fazer Reserva</a>
+                    </div>
+                </div>
+                <div class="promo-card">
+                    <img src="../public/images/aromasclub.png" alt="AroClub Programa de Fidelidade" class="card-img">
+                    <div class="card-content">
+                        <h3>Aromas</h3>
+                        <h4 class="detalhes">AroClub - Programa de fidelidade</h4>
+                        <p class="detalhes">Quanto mais pontos você acumula, mais você ganha. Troque seus pontos por
+                            descontos e até
+                            mesmo rodízio grátis.</p>
+                        <a href="#" class="btn">Cadastre-se</a>
+                    </div>
+                </div>
+                <div class="promo-card">
+                    <img src="../public/images/aromaspromo.png" alt="Promoção Aniversário" class="card-img">
+                    <div class="card-content">
+                        <h3>Aromas</h3>
+                        <h4 class="detalhes">Desfrute de música ao vivo com descontos exclusivos.</h4>
+                        <p class="detalhes">Venha curtir um show ao vivo com a gente! Aproveite descontos especiais nos
+                            pratos e open bar durante o evento.</p>
+                        <a href="#" class="btn">Participar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="avaliacoes">
+            <img src="../public/images/chefe0.1.png" alt="chefe">
+            <div id="avaliacoes_conteiner">
+                <h2 class="section-title">
+                    Depoimentos
+                </h2>
+                <h3 class="section-subtitle">O que os clientes falam sobre nosso restaurante?</h3>
+            </div>
+            <div id="feedback">
+                <img src="../public/images/cliente1.png" class="feedback-avatar" alt="clientes">
+                 <div class="feedback-content">
+                    <p>
+                        juliana alves 
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </span>
+                    </p>
+                    <p>
+                        Cada prato é uma explosão de sabores! O atendimento foi impecável, e o ambiente é super acolhedor. Com certeza voltarei mais vezes.
+                    </p>
+                 </div>
+            </div>
+            <div id="feedback">
+                <img src="../public/images/cliente2.png" class="feedback-avatar" alt="clientes">
+                 <div class="feedback-content">
+                    <p>
+                        juliana alves 
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </span>
+                    </p>
+                    <p>
+                        Cada prato é uma explosão de sabores! O atendimento foi impecável, e o ambiente é super acolhedor. Com certeza voltarei mais vezes.
+                    </p>
+                 </div>
+            </div>
+            <div id="feedback">
+                <img src="../public/images/cliente3.png" class="feedback-avatar" alt="clientes">
+                 <div class="feedback-content">
+                    <p>
+                        juliana alves 
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </span>
+                    </p>
+                    <p>
+                        Cada prato é uma explosão de sabores! O atendimento foi impecável, e o ambiente é super acolhedor. Com certeza voltarei mais vezes.
+                    </p>
+                 </div>
+            </div>
+            <div id="feedback">
+                <img src="../public/images/cliente4.png" class="feedback-avatar" alt="clientes">
+                 <div class="feedback-content">
+                    <p>
+                        juliana alves 
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </span>
+                    </p>
+                    <p>
+                        Cada prato é uma explosão de sabores! O atendimento foi impecável, e o ambiente é super acolhedor. Com certeza voltarei mais vezes.
+                    </p>
+                 </div>
+            </div>
+            bu
+        </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

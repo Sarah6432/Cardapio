@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aromas - Cardápio</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" href="../public/stylesheets/carrinho.css">
+    <!-- Animações AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick-theme.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/6f52904997.js" crossorigin="anonymous"></script>
+    <script src="../public/javascripts/funçõespgcarrinho.js"></script>
+    <script src="../public/javascripts/funçõespgcarrinho2.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="nav-logo">
+                <i id="nav_logo" class="fa-solid fa-plate-wheat"></i>
+                <p class="nav-text"><a href="index.html">Aromas</a></p>
+            </div>
+            <ul id="nav-list">
+                <li class="nav-item"><a href="index.html">Início</a></li>
+                <li class="nav-item"><a href="#menu">Cardápio</a></li>
+                <li class="nav-item"><a href="#rodizio">Rodízio</a></li>
+                <li class="nav-item"><a href="carrinho.html"><i class="fas fa-basket-shopping btn-default"></i></a></li>
+            </ul>
+            <button class="btn-default">Pratos e Pedidos</button>
+            <button id="mobile_btn"><i class="fa-solid fa-bars"></i></button>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav-list">
+                <li class="nav-item"><a href="#home">Início</a></li>
+                <li class="nav-item"><a href="#menu">Cardápio</a></li>
+                <li class="nav-item"><a href="#rodizio">Rodízio</a></li>
+            </ul>
+            <button class="btn-default">Pratos e Pedidos</button>
+        </div>
+    </header>
+
+    <main class="aromas-cart-container">
+        <section class="aromas-cart">
+            <h1 class="aromas-cart-title">Carrinho de Compras</h1>
+
+            <div class="aromas-cart-table">
+                <div class="aromas-cart-header">
+                    <span class="aromas-cart-col">Produto</span>
+                </div>
+
+                <div class="aromas-cart-item">
+                    <div id="cart-container">
+                        <ul id="cart"></ul>
+                    </div>                    
+                    <span class="aromas-item-price"></span>
+                </div>
+            </div>
+            <div class="cep-section">
+                <label for="cep">Digite seu CEP:</label>
+                <input type="text" id="cep" placeholder="XXXXX-XXX">
+                <button onclick="buscarEndereco()">Calcular entrega</button>
+                <p id="endereco"></p>
+            </div>
+                    <div class="aromas-summary">
+                        <h2>Resumo do Pedido</h2>
+                        <p>Subtotal: <span id="sub-total-preco">R$ 0,00</span></p>
+                        <p>Entrega: <span id="valor-entrega">R$ 0,00</span></p>
+                        <p>Total: <span id="total-preco">R$ 0,00</span></p>
+                    </div>
+            </div>
+            
+
+            <section class="aromas-login">
+                <h2>Finalizar Compra</h2>
+                <form class="aromas-login-form">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" placeholder="Digite seu nome completo" required>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="Crie uma senha"></label>
+                    <label for="phone">Telefone</label>
+                    <input type="tel" id="phone" placeholder="(xx) xxxx-xxxx" required>
+                    <div class="aromas-payment">
+                        <h2>Formas de Pagamento</h2>
+                        <div class="payment-options">
+                            <img src="../public/images/pagar1.webp" alt="Cartões">
+                            <img src="../public/images/pagar2.webp" alt="Boleto">
+                            <img src="../public/images/pagar3.webp" alt="Pix">
+                        </div>
+                    </div>
+                    <button type="submit" class="aromas-submit-btn">Finalizar Pedido</button>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-itens">
+            <span id="copyright">
+                &copy; 2024 Aromas
+            </span>
+            <div class="social-media-buttons">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../public/javascripts/script.js"></script>
+</body>
+
+</html>

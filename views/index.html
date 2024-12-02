@@ -1,4 +1,5 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -13,8 +14,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="../public/stylesheets/notificação.css">
+    <script src="../public/javascripts/funções.js" defer></script>
+    <script src="../public/javascripts/funções2.js" defer></script>
+    <script src="../public/javascripts/funçõespgcarrinho.js" defer></script>
+    <script src="../public/javascripts/funçõespgcarrinho2.js" defer></script>
+
 </head>
 
 <body>
@@ -23,14 +31,15 @@
         <nav id="navbar">
             <div class="nav-logo">
                 <i id="nav_logo" class="fa-solid fa-plate-wheat"></i>
-                <p class="nav-text"><a href="#home">Aromas</a></p>
+                <p class="nav-text"><a href="index.html">Aromas</a></p>
             </div>
             <ul id="nav-list">
                 <li class="nav-item"><a href="#home">Início</a></li>
                 <li class="nav-item"><a href="#menu">Cardápio</a></li>
-                <li class="nav-item"><a href="#rodizio">Rodízio</a></li>
+                <li class="nav-item"><a href="#horarios">Horários</a></li>
+                <li class="nav-item"><a href="carrinho.html"><i class="fas fa-basket-shopping btn-default"></i></a></li>
             </ul>
-            <button class="btn-default">Peça Aqui</button>
+            <button class="btn-default"><a href="cadastroDePratos.html">Pratos e Pedidos</a></button>
             <button id="mobile_btn"><i class="fa-solid fa-bars"></i></button>
         </nav>
 
@@ -40,7 +49,7 @@
                 <li class="nav-item"><a href="#menu">Cardápio</a></li>
                 <li class="nav-item"><a href="#rodizio">Rodízio</a></li>
             </ul>
-            <button class="btn-default">Peça Aqui</button>
+            <button class="btn-default">Pratos e Pedidos</button>
         </div>
     </header>
 
@@ -54,7 +63,7 @@
                     </div>
                     <p class="description">Sabores que conquistam. Experiências que encantam.</p>
                     <div id="cta_buttons">
-                        <a href="#" class="btn-default">Sobre nós</a>
+                        <a href="#sobre-nos" class="btn-default">Sobre nós</a>
                         <a href="tel:+551199999999" id="phone_button">
                             <button class="btn-default">
                                 <i class="fa-solid fa-phone"></i>
@@ -94,7 +103,7 @@
                         <a href="#"><i class="fa-solid fa-star"></i></a>
                         <span>(500+)</span>
                     </div>
-                    <div class="dish-price">
+                    <div class="dish-price card-car">
                         <h4>R$24,90</h4>
                         <button class="btn-default cart"><i class="fa-solid fa-basket-shopping"></i></button>
                     </div>
@@ -102,11 +111,11 @@
                 <div class="dish">
                     <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
                     <div class="imagem">
-                        <img class="dish-image" src="../public/images/comida0.4.png" height="230px" alt="">
+                        <img class="dish-image" src="../public/images/comida0.3.png" height="230px" alt="">
                     </div>
                     <h3 class="dish-title">Estrela do Campo</h3>
-                    <span class="dish-description">Filé de carne grelhada suculenta, acompanhado de batatas rústicas
-                        temperadas com ervas finas.</span>
+                    <span class="dish-description">Uma combinação refrescante de abacate fatiado, ovo cozido e pão
+                        rústico com azeite e limão.</span>
                     <div class="dish-rate">
                         <a href="#"><i class="fa-solid fa-star"></i></a>
                         <a href="#"><i class="fa-solid fa-star"></i></a>
@@ -116,7 +125,7 @@
                         <span>(500+)</span>
                     </div>
                     <div class="dish-price">
-                        <h4>R$18,50</h4>
+                        <h4>R$32,00</h4>
                         <button class="btn-default cart"><i class="fa-solid fa-basket-shopping"></i></button>
                     </div>
                 </div>
@@ -241,65 +250,94 @@
                 <a href="#bebidas"><button class="filtro">Bebidas</button></a>
             </div>
             <div class="menu-grid" id="todos">
-                <div class="card" id="principais">
-                    <img src="../public/images/comida0.1.png" alt="Penne ao Pesto Cremoso">
-                    <h3>Penne ao Pesto Cremoso</h3>
+                <div class="card card-car" id="principais">
+                    <img src="../public/images/comida0.1.png" class="produto" alt="Penne ao Pesto Cremoso">
+                    <h3 class="card-name">Penne ao Pesto Cremoso</h3>
                     <p>Penne, manjericão, nozes trituradas, creme de leite.</p>
+                    <div class="dish-price card-car">
+                        <h4>R$24,90</h4>
+                    </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
-
                 <div class="card" id="principais">
                     <img src="../public/images/comida0.2.png" alt="Nigiri">
                     <h3>Tostada Tropical</h3>
                     <p>abacate, ovo cozido, pão rústico com azeite e limão.</p>
+                    <div class="dish-price card-car">
+                        <h4>R$33,90</h4>
+                    </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="principais">
                     <img src="../public/images/comida0.3.png" alt="Nigiri">
                     <h3>Refeição do Chef</h3>
                     <p>Arroz, carne marinada, ervas e batatas</p>
+                    <div class="dish-price card-car">
+                        <h4>R$44,00</h4>
+                    </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="principais">
                     <img src="../public/images/comida0.4.png" alt="Nigiri">
                     <h3>Estrela do Campo</h3>
                     <p>Filé de carne, batatas rústicas, ervas.</p>
+                    <div class="dish-price card-car">
+                        <h4>R$25,90</h4>
+                    </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="entradas">
                     <img src="../public/images/comida0.5.png" alt="Temaki">
                     <h3>Banana Caramelizada à Canela</h3>
                     <p>Fatias de banana douradas com açúcar mascavo e um toque de canela.</p>
+                    <div class="dish-price card-car">
+                        <h4>R$15,90</h4>
+                    </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="entradas">
                     <img src="../public/images/comida0.6.png" alt="Temaki">
                     <h3>Tostadinha de Frango e Cebola</h3>
                     <p>Camadas de frango desfiado temperado, com cebolas caramelizadas.</p>
+                    <div class="dish-price card-car">
+                        <h4>R$15,90</h4>
+                    </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="entradas">
                     <img src="../public/images/comida0.7.png" alt="Temaki">
                     <h3>Batatas Dueto Temperado de Molhos</h3>
                     <p>Cubos de batata assados, servidos com um delicioso molho cremoso.</p>
+                    <div class="dish-price card-car">
+                        <h4>R$15,90</h4>
+                    </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="entradas">
                     <img src="../public/images/comida0.8.png" alt="Temaki">
                     <h3>Creme de Verduras e Camarão</h3>
                     <p>Creme aveludado de verduras frescas com pedaços suculentos de camarão</p>
+                    <div class="dish-price card-car">
+                        <h4>R$15,90</h4>
+                    </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="sobremesa">
                     <img src="../public/images/comida13.png" alt="Temaki">
                     <h3>Tentação de Chocolate Creme e Morango</h3>
                     <p>Uma explosão de chocolate em diferentes texturas, com camadas de mousse.</p>
+                    <div class="dish-price card-car">
+                        <h4>R$34,90</h4>
+                    </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="sobremesa">
                     <img src="../public/images/comida14.png" alt="Temaki">
                     <h3> Sonho Floresta Negra Ascendente</h3>
                     <p>Clássico bolo de chocolate com recheio de chantilly e cerejas ao licor e chocolate amargo.</p>
+                    <div class="dish-price card-car">
+                        <h4>R$34,90</h4>
+                    </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="sobremesa">
@@ -307,12 +345,18 @@
                     <h3>Tortilha Doce de Morango</h3>
                     <p>Tortilhas crocantes recheadas com morangos caramelizados e creme suave, finalizadas com uma calda
                         doce.</p>
+                        <div class="dish-price card-car">
+                            <h4>R$34,90</h4>
+                        </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="sobremesa">
                     <img src="../public/images/comida16.png" alt="Temaki">
                     <h3>Doce Tropical Banoffee</h3>
                     <p>Uma base de banana caramelizada coberta com creme suave, ovos levemente adoçados</p>
+                    <div class="dish-price card-car">
+                        <h4>R$34,90</h4>
+                    </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="bebidas">
@@ -320,6 +364,9 @@
                     <h3>Refresco do Sol</h3>
                     <p>Uma combinação vibrante de suco de laranja fresco e melancia gelada, trazendo o sabor doce e
                         cítrico do verão.</p>
+                        <div class="dish-price card-car">
+                            <h4>R$20,90</h4>
+                        </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="bebidas">
@@ -327,6 +374,9 @@
                     <h3>Limão Supreme</h3>
                     <p>Suco de limão com toque equilibrado entre o azedinho e o doce, com folhas de hortelã para um
                         frescor extra.</p>
+                        <div class="dish-price card-car">
+                            <h4>R$20,90</h4>
+                        </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="bebidas">
@@ -334,32 +384,22 @@
                     <h3>Explosão Morango Picante</h3>
                     <p>Um mix ousado de morango fresco e pimenta suave, criando um contraste de sabores doce e levemente
                         ardente.</p>
+                        <div class="dish-price card-car">
+                            <h4>R$20,90</h4>
+                        </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
                 <div class="card" id="bebidas">
                     <img src="../public/images/comida12.png" alt="Temaki">
                     <h3>Paraíso Tropical</h3>
                     <p>Um blend exótico de abacaxi, maracujá, manga e coco, com um toque refrescante de hortelã.</p>
+                    <div class="dish-price card-car">
+                        <h4>R$20,90</h4>
+                    </div>
                     <button class="pedir-agora">Pedir agora</button>
                 </div>
             </div>
         </section>
-        <div class="carousel" id="rodizio" data-aos="fade-up">
-            <div class="slide">
-                <img src="../public/images/slide1.0.png" alt="Slide 1">
-                <div class="slide-content">
-                    <h1>Rodízios Aromas</h1>
-                    <button class="btn-carousel">Ver Menu</button>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="../public/images/slide2.0.png" alt="Slide 2">
-                <div class="slide-content">
-                    <h1>Faça uma reserva</h1>
-                    <button class="btn-carousel">Saiba Mais</button>
-                </div>
-            </div>
-        </div>
         <section class="menu-section" id="horarios">
             <div>
                 <h1 class="titulo">Nossos Horários</h1>
@@ -406,7 +446,7 @@
                         <p class="detalhes">Quanto mais pontos você acumula, mais você ganha. Troque seus pontos por
                             descontos e até
                             mesmo rodízio grátis.</p>
-                        <a href="#" class="btn">Cadastre-se</a>
+                        <a href="cadastroaroclub.html" class="btn">Cadastre-se</a>
                     </div>
                 </div>
                 <div class="promo-card">
@@ -421,89 +461,145 @@
                 </div>
             </div>
         </section>
-        <section id="avaliacoes">
-            <img src="../public/images/chefe0.1.png" alt="chefe">
-            <div id="avaliacoes_conteiner">
-                <h2 class="section-title">
-                    Depoimentos
-                </h2>
-                <h3 class="section-subtitle">O que os clientes falam sobre nosso restaurante?</h3>
-            </div>
-            <div id="feedback">
-                <img src="../public/images/cliente1.png" class="feedback-avatar" alt="clientes">
-                 <div class="feedback-content">
-                    <p>
-                        juliana alves 
-                        <span>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </span>
-                    </p>
-                    <p>
-                        Cada prato é uma explosão de sabores! O atendimento foi impecável, e o ambiente é super acolhedor. Com certeza voltarei mais vezes.
-                    </p>
-                 </div>
-            </div>
-            <div id="feedback">
-                <img src="../public/images/cliente2.png" class="feedback-avatar" alt="clientes">
-                 <div class="feedback-content">
-                    <p>
-                        juliana alves 
-                        <span>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </span>
-                    </p>
-                    <p>
-                        Cada prato é uma explosão de sabores! O atendimento foi impecável, e o ambiente é super acolhedor. Com certeza voltarei mais vezes.
-                    </p>
-                 </div>
-            </div>
-            <div id="feedback">
-                <img src="../public/images/cliente3.png" class="feedback-avatar" alt="clientes">
-                 <div class="feedback-content">
-                    <p>
-                        juliana alves 
-                        <span>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </span>
-                    </p>
-                    <p>
-                        Cada prato é uma explosão de sabores! O atendimento foi impecável, e o ambiente é super acolhedor. Com certeza voltarei mais vezes.
-                    </p>
-                 </div>
-            </div>
-            <div id="feedback">
-                <img src="../public/images/cliente4.png" class="feedback-avatar" alt="clientes">
-                 <div class="feedback-content">
-                    <p>
-                        juliana alves 
-                        <span>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </span>
-                    </p>
-                    <p>
-                        Cada prato é uma explosão de sabores! O atendimento foi impecável, e o ambiente é super acolhedor. Com certeza voltarei mais vezes.
-                    </p>
-                 </div>
-            </div>
-            bu
+            <section id="avaliacoes" data-aos="fade-up">
+                <h2 class="title-avaliacoes">O que os clientes falam sobre nós?</h2>
+                <div>
+                    <h1 class="subtitle-avaliacoes">Avaliações</h1>
+                </div>
+                <div class="avaliacoes-cards">
+                    <div class="card-av">
+                        <div class="card-top">
+                            <div class="profile">
+                                <div class="profile-img">
+                                    <img src="../public/images/cliente1.png" alt="perfil">
+                                </div>
+                                <div class="name-user">
+                                    <strong>Julia Gomes</strong>
+                                    <span>@juh_gomes</span>
+                                </div>
+                                <div class="reviews">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="details-av">O atendimento foi incrível! A equipe é super atenciosa e fez de tudo para que nossa experiência fosse perfeita.</p>
+                        </div>
+                    </div>
+                    <div class="card-av">
+                        <div class="card-top">
+                            <div class="profile">
+                                <div class="profile-img">
+                                    <img src="../public/images/cliente2.png" alt="perfil">
+                                </div>
+                                <div class="name-user">
+                                    <strong>Paulo Fernando</strong>
+                                    <span>@P.Fernando</span>
+                                </div>
+                                <div class="reviews">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="details-av">Fomos recebidos com um sorriso e muita simpatia. O cuidado com os clientes é de outro nível!</p>
+                        </div>
+                    </div>
+                    <div class="card-av">
+                        <div class="card-top">
+                            <div class="profile">
+                                <div class="profile-img">
+                                    <img src="../public/images/cliente3.png" alt="perfil">
+                                </div>
+                                <div class="name-user">
+                                    <strong>Maria Clara</strong>
+                                    <span>@Mari_clara</span>
+                                </div>
+                                <div class="reviews">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="details-av">O clima do restaurante é perfeito, seja para um jantar romântico ou para um encontro com amigos.</p>
+                        </div>
+                    </div>
+                    <div class="card-av">
+                        <div class="card-top">
+                            <div class="profile">
+                                <div class="profile-img">
+                                    <img src="../public/images/cliente4.png" alt="perfil">
+                                </div>
+                                <div class="name-user">
+                                    <strong>Juliana Farias</strong>
+                                    <span>@Farias<span>
+                                </div>
+                                <div class="reviews">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="details-av">Tudo impecável: comida deliciosa, atendimento de primeira e ambiente aconchegante. Parabéns!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section> 
         </section>
+        <section class="aromas-about-section" id="sobre-nos" data-aos="fade-up">
+            
+            <h1 class="aromas-about-title">Sobre Nós</h1>
+          
+            
+            <div class="aromas-about-content">
+            
+              <div class="aromas-about-text">
+                <p>
+                  No <strong>Aromas</strong>, acreditamos que cada prato conta uma história. 
+                  Combinamos ingredientes frescos, aromas irresistíveis e sabores únicos 
+                  para proporcionar experiências que encantam. Nosso compromisso é 
+                  entregar não apenas comida, mas momentos inesquecíveis para você e sua família.
+                </p>
+                <p>
+                  Seja em uma refeição rápida ou em um rodízio especial, 
+                  estamos aqui para fazer parte dos seus melhores momentos. 
+                  Venha conhecer e se surpreender com o melhor da nossa culinária!
+                </p>
+              </div>
+          
+              <div class="aromas-about-images">
+                <img src="../public/images/imagem0.1.jpeg" alt="Ambiente do restaurante Aromas" class="about-img">
+                <img src="../public/images/imagem0.2.jpeg" alt="Ambiente do restaurante Aromas" class="about-img">
+                <img src="../public/images/imagem0.4.jpeg" alt="Equipe Aromas preparando pratos" class="about-img">
+              </div>
+            </div>
+          </section>
+          
     </main>
+    <footer>
+    <div class="footer-itens">
+        <span id="copyright">
+            &copy 2024 Aromas
+        </span>
+        <div class="social-media-buttons">
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+    </div>
+    </footer>
+
+    <div id="notification" class="hidden"></div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

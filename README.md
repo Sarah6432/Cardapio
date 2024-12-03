@@ -10,7 +10,9 @@ Recebimento de Pedidos: Sistema intuitivo para finalizar compras com dados compl
 🛠️ Tecnologias Utilizadas
 Frontend: HTML, CSS, JavaScript
 Backend: Firebase (Firestore para banco de dados e Firebase Authentication para autenticação)
-🎯 Como Funciona
+
+🎯 Como Funciona:
+
 1. Tela Inicial
 A página inicial apresenta os pratos disponíveis no restaurante com descrição e preço.
 
@@ -20,9 +22,9 @@ Escolha os pratos que deseja e clique em "Adicionar ao Carrinho". Após selecion
 3. Finalização do Pedido
 No carrinho, preencha seus dados:
 
-Nome
-E-mail
-Número de Telefone
+Nome,
+E-mail,
+Número de Telefone,
 Endereço
 Se você já possui uma conta no Aromas, basta fazer login para concluir a compra.
 4. Cadastro de Usuário

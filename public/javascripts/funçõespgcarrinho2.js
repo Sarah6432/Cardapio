@@ -9,49 +9,14 @@ document.querySelectorAll('.pedir-agora').forEach((button) => {
             image: dishElement.querySelector('.produto').src,
         };
 
-        
+       
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         cart.push(dish);
 
-        
+       
         localStorage.setItem('cart', JSON.stringify(cart));
+       
     });
-});
-document.getElementById('aromas-login-form').addEventListener('submit', function (event) {
-    event.preventDefault(); 
-    
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-
-    if (cartItems.length === 0) {
-        alert("Seu carrinho está vazio! Adicione itens antes de finalizar a compra.");
-        return;
-    }
-
-   
-    const subtotal = cartItems.reduce((sum, item) => sum + parseFloat(item.price.replace('R$', '').replace(',', '.')), 0);
-    const deliveryFee = parseFloat(document.getElementById('valor-entrega').textContent.replace('R$', '').replace(',', '.')) || 0;
-    const total = subtotal + deliveryFee;
-
-   
-    const orderData = {
-        customer: {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-        },
-        cart: cartItems,
-        summary: {
-            subtotal: `R$ ${subtotal.toFixed(2).replace('.', ',')}`,
-            deliveryFee: `R$ ${deliveryFee.toFixed(2).replace('.', ',')}`,
-            total: `R$ ${total.toFixed(2).replace('.', ',')}`,
-        },
-    };
-
-    
-    localStorage.setItem('orderData', JSON.stringify(orderData));
-
-    
-    window.location.href = "dashboard.html"; 
 });
 
 
@@ -81,7 +46,9 @@ window.onload = function () {
         cartContainer.appendChild(cartItem);
     });
 
+
     updateSummary();
+
 
     document.querySelectorAll('.remove-btn').forEach((button) => {
         button.addEventListener('click', function () {
@@ -93,12 +60,10 @@ window.onload = function () {
     });
 };
 
-
 function updateSummary() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     let subtotal = 0;
 
-   
     cart.forEach(item => {
         const price = parseFloat(item.price.replace('R$', '').replace(',', '.'));
         subtotal += price;
@@ -107,12 +72,12 @@ function updateSummary() {
     const deliveryFee = calculateDelivery(); 
     const total = subtotal + deliveryFee;
 
-   
+    
     document.getElementById('sub-total-preco').textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
     if (deliveryFee > 0) {
         document.getElementById('valor-entrega').textContent = `R$ ${deliveryFee.toFixed(2).replace('.', ',')}`;
     } else {
-        document.getElementById('valor-entrega').textContent = 'R$ 0,00'; 
+        document.getElementById('valor-entrega').textContent = 'R$ 0,00'; // Sem entrega se não houver valor
     }
     document.getElementById('total-preco').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
 }
@@ -121,9 +86,8 @@ function updateSummary() {
 function calculateDelivery() {
     const cep = document.getElementById('cep').value;
 
-    
     if (cep.trim() !== "") {
-        
+       
         if (cep !== '00000-000') {
             return 10.00; 
         }
@@ -136,9 +100,9 @@ function buscarEndereco() {
     const cep = document.getElementById('cep').value;
     const enderecoContainer = document.getElementById('endereco');
 
-   
+ 
     if (cep.trim() !== "") {
-       
+     
         if (cep === '00000-000') {
             enderecoContainer.textContent = 'Entrega no próprio restaurante, sem custo de entrega.';
         } else {
@@ -148,6 +112,6 @@ function buscarEndereco() {
         updateSummary(); 
     } else {
         enderecoContainer.textContent = ''; 
-        updateSummary(); 
+        updateSummary();
     }
 }

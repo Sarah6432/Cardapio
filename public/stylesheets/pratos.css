@@ -120,3 +120,6 @@ body {
     background-color: #ffda47;
     color: #333;
   }
+  .sidebar h2 .logo{
+    text-decoration: none;
+  }

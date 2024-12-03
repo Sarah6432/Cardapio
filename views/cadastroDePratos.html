@@ -13,7 +13,7 @@
   <div class="dashboard">
 
     <div class="sidebar">
-      <h2>Aromas</h2>
+      <h2><a class="logo" href="index.html">Aromas</a></h2>
       <a href="#cadastrar-pratos">Cadastrar Pratos</a>
       <a href="#ver-pedidos">Pedidos dos Clientes</a>
     </div>
@@ -24,6 +24,7 @@
       <div class="section" id="cadastrar-pratos">
         <h1>Dashboard</h1>
         <h3>Cadastrar Pratos</h3>
+        <div id="formMessage" style="display: none;"></div>
         <form>
           <div class="form-group">
             <label for="imagem">Selecionar Imagem</label>
@@ -44,41 +45,10 @@
           <button type="submit">Cadastrar Prato</button>
         </form>
       </div>
-      <div class="section" id="ver-pedidos">
-        <h3>Pedidos dos Clientes</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Cliente</th>
-              <th>Prato</th>
-              <th>Quantidade</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>João Silva</td>
-              <td>Estrela do Campo</td>
-              <td>2</td>
-              <td>R$64,00</td>
-            </tr>
-            <tr>
-              <td>Maria Oliveira</td>
-              <td>Mingau Fit Power</td>
-              <td>1</td>
-              <td>R$24,90</td>
-            </tr>
-            <tr>
-              <td>Carlos Santos</td>
-              <td>Estrela do Campo</td>
-              <td>3</td>
-              <td>R$96,00</td>
-            </tr>
-          </tbody>
-        </table>
+      <div id="pratos-list">
       </div>
-    </div>
-  </div>
-  <script src="/public/javascripts/pratos.js"></script>
+      
+      
+  <script type="module" src="/models/pratos_fe.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 🌸 Aromas - Cardápio Digital 🌸
+
 Bem-vindo ao Aromas, um site de cardápio digital moderno e interativo que conecta usuários a um banco de dados robusto no Firebase. No Aromas, você pode explorar pratos, gerenciar seu carrinho de compras, cadastrar-se como usuário e realizar pedidos com facilidade. 🍽️✨
 
 🚀 Funcionalidades

@@ -1,0 +1,138 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffbeb;
+}
+
+/* Container Principal */
+.register-container {
+    background: #ffda47;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    backdrop-filter: blur(15px);
+    width: 100%;
+    max-width: 400px;
+    transition: all;
+}
+
+/* Título */
+.register-container h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #F1FAEE;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Inputs */
+input {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 5px;
+    padding: 14px 18px;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    transform: scale(1.05);
+    outline: 2px solid #fffbeb;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão de Cadastro */
+button {
+    background: linear-gradient(90deg,  #ffda47, #ffcc00);
+    color: #fff;
+    border: #fff solid 3px;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+
+button:hover {
+    background: #ffda47;
+    transform: scale(1.05);
+    transition: all 0.6s ease;
+}
+
+/* Link de Login */
+.login-link {
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-link a {
+    font-weight: bold;
+    color: #c7c7c7;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Separador */
+.separator {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #F1FAEE;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #F1FAEE;
+}
+
+.separator::before {
+    left: 0;
+}
+
+.separator::after {
+    right: 0;
+}
+.messageDiv {
+    background-color: #ffda47;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeOut 7s forwards;
+}

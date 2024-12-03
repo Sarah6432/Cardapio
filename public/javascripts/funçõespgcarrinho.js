@@ -1,6 +1,6 @@
 document.querySelectorAll('.cart').forEach((button) => {
     button.addEventListener('click', function () {
-        const dishElement = this.closest('.dish'); // Localiza o prato correspondente
+        const dishElement = this.closest('.dish'); 
         const dish = {
             title: dishElement.querySelector('.dish-title').textContent,
             description: dishElement.querySelector('.dish-description').textContent,
@@ -8,11 +8,11 @@ document.querySelectorAll('.cart').forEach((button) => {
             image: dishElement.querySelector('.dish-image').src,
         };
 
-        // Recupera o carrinho existente ou inicializa como array vazio
+        
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         cart.push(dish);
 
-        // Salva o carrinho atualizado no localStorage
+       
         localStorage.setItem('cart', JSON.stringify(cart));
     });
 });
@@ -42,76 +42,73 @@ window.onload = function () {
         cartContainer.appendChild(cartItem);
     });
 
-    // Adiciona funcionalidade ao botão de remoção
     document.querySelectorAll('.remove-btn').forEach((button) => {
         button.addEventListener('click', function () {
             const index = this.getAttribute('data-index');
             cart.splice(index, 1);
             localStorage.setItem('cart', JSON.stringify(cart));
-            window.location.reload(); // Recarrega para atualizar o carrinho
+            window.location.reload(); 
         });
     });
 };
-// Função para calcular o preço total e o subtotal
+
 function updateSummary() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     let subtotal = 0;
 
-    // Calcula o subtotal com base nos itens no carrinho
+    
     cart.forEach(item => {
         const price = parseFloat(item.price.replace('R$', '').replace(',', '.'));
         subtotal += price;
     });
 
-    const deliveryFee = calculateDelivery(); // Calcula a entrega, se necessário
+    const deliveryFee = calculateDelivery(); 
     const total = subtotal + deliveryFee;
 
-    // Atualiza os valores na interface
+    
     document.getElementById('sub-total-preco').textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
     if (deliveryFee > 0) {
         document.getElementById('valor-entrega').textContent = `R$ ${deliveryFee.toFixed(2).replace('.', ',')}`;
     } else {
-        document.getElementById('valor-entrega').textContent = 'R$ 0,00'; // Sem entrega se não houver valor
+        document.getElementById('valor-entrega').textContent = 'R$ 0,00'; 
     }
     document.getElementById('total-preco').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
 }
-
-// Função para calcular a taxa de entrega com base no CEP
 function calculateDelivery() {
     const cep = document.getElementById('cep').value;
 
-    // Verifica se o campo CEP está preenchido
+    
     if (cep.trim() !== "") {
-        // Simulação: se o CEP não for local (definido como '00000-000'), será cobrada uma taxa de entrega
+       
         if (cep !== '00000-000') {
-            return 10.00; // Exemplo: taxa fixa de entrega
+            return 10.00; 
         }
     }
-    return 0.00; // Se o CEP não for válido ou não for inserido, a entrega é grátis
+    return 0.00; 
 }
 
-// Função para atualizar o CEP e a entrega
+
 function buscarEndereco() {
     const cep = document.getElementById('cep').value;
     const enderecoContainer = document.getElementById('endereco');
 
-    // Verifica se o CEP foi inserido
+    
     if (cep.trim() !== "") {
-        // Aqui você poderia fazer uma API real para buscar o endereço, mas para fins de exemplo:
+        
         if (cep === '00000-000') {
             enderecoContainer.textContent = 'Entrega no próprio restaurante, sem custo de entrega.';
         } else {
             enderecoContainer.textContent = 'Entrega externa, custo de R$ 10,00.';
         }
 
-        updateSummary(); // Atualiza o subtotal e total quando o CEP for inserido
+        updateSummary(); 
     } else {
-        enderecoContainer.textContent = ''; // Se o campo CEP estiver vazio, não exibe a mensagem
-        updateSummary(); // Atualiza o subtotal e total sem a entrega
+        enderecoContainer.textContent = ''; 
+        updateSummary(); 
     }
 }
 
-// Carrega o carrinho e atualiza os valores ao carregar a página
+
 window.onload = function () {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContainer = document.getElementById('cart');
@@ -138,16 +135,16 @@ window.onload = function () {
         cartContainer.appendChild(cartItem);
     });
 
-    // Atualiza os preços
+
     updateSummary();
 
-    // Adiciona funcionalidade ao botão de remoção
+   
     document.querySelectorAll('.remove-btn').forEach((button) => {
         button.addEventListener('click', function () {
             const index = this.getAttribute('data-index');
             cart.splice(index, 1);
             localStorage.setItem('cart', JSON.stringify(cart));
-            window.location.reload(); // Recarrega para atualizar o carrinho
+            window.location.reload(); 
         });
     });
 };

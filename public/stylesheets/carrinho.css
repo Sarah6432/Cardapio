@@ -234,13 +234,25 @@
   margin-bottom: 0;
 }
 
-/* Estilo de resposta para o endereço */
 #endereco {
   font-size: 1rem;
   color: #ffda47;
   font-weight: bold;
 }
 
-
-
-  
+.cadastrar{
+    text-decoration: none;
+    color: #ffda47;
+    margin-bottom: 5%;
+}
+.messageDiv {
+  background-color: #ffda47;
+  color: #333;
+  padding: 10px 20px;
+  font-size: 14px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  opacity: 0;
+  animation: fadeOut 7s forwards;
+}

@@ -1,16 +1,7 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import 'https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js';
-import 'https://www.gstatic.com/firebasejs/10.11.0/firebase-auth-compat.js';
-import 'https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore-compat.js';
-import 'https://www.gstatic.com/firebasejs/10.11.0/firebase-storage-compat.js';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyAMDuFnNwp1mVlRVPotB_NkBvmbmNWxTf4",
   authDomain: "restaurante-82ef5.firebaseapp.com",
@@ -21,9 +12,60 @@ const firebaseConfig = {
   measurementId: "G-B682R8KLZ7"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = app.firestore();
+const db = getFirestore(app);
 
-export { auth, db };
+export { db };
+
+function showMessage(message, divId) {
+  const messageDiv = document.getElementById(divId);
+  messageDiv.style.display = 'block';
+  messageDiv.innerHTML = message;
+  messageDiv.style.opacity = 1;
+  setTimeout(() => {
+    messageDiv.style.opacity = 0;
+  }, 5000);
+}
+
+const signUp = document.getElementById('submitSignUp');
+signUp.addEventListener('click', (event) => {
+  event.preventDefault();
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('senha').value;
+  const nome = document.getElementById('nome').value;
+
+  const [firstName, lastName] = nome.split(' ');
+
+  const auth = getAuth(app);
+  const db = getFirestore();
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      const userData = {
+        email: email,
+        nome: nome,
+        senha:password,
+        uid: user.uid
+      };
+
+      showMessage('Cadastro realizado com sucesso!', 'signUpMessage');
+
+      const docRef = doc(db, "users", user.uid);
+      setDoc(docRef, userData)
+        .then(() => {
+          window.location.href = 'carrinho.html';
+        })
+        .catch((error) => {
+          console.error("Erro ao salvar o documento:", error);
+        });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === 'auth/email-already-in-use') {
+        showMessage('Email já cadastrado', 'signUpMessage');
+      } else {
+        showMessage('Não foi possível realizar o cadastro', 'signUpMessage');
+      }
+    });
+});

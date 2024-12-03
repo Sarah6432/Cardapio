@@ -25,8 +25,8 @@ No carrinho, preencha seus dados:
 Nome,
 E-mail,
 Número de Telefone,
-Endereço
-Se você já possui uma conta no Aromas, basta fazer login para concluir a compra.
+Endereço,
+se você já possui uma conta no Aromas, basta fazer login para concluir a compra.
 4. Cadastro de Usuário
 Caso ainda não tenha uma conta, realize o cadastro preenchendo os campos necessários. Após isso, faça login e finalize sua compra.
 

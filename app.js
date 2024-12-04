@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var pratosRouter = require('./routes/pratos'); 
+app.use('/pratos', pratosRouter); 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 

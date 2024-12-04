@@ -40,13 +40,17 @@
             <label for="detalhes">Detalhes do Prato</label>
             <textarea id="detalhes" name="detalhes" rows="4" placeholder="Descreva os detalhes do prato"></textarea>
           </div>
-          <button type="submit">Cadastrar Prato</button>
+          <button type="submit" onclick="finalizarPedido()">Cadastrar Prato</button>
         </form>
       </div>
       <div id="pratos-list">
       </div>
+      <div onload="carregarPedidosDoCliente('cliente@example.com')">
+        <div id="pedidos-container"></div>
+      </div>
       
       
   <script type="module" src="/models/pratos_fe.js"></script>
+  <script type="module" src="/models/informarPedidos.js"></script>
 </body>
 </html>

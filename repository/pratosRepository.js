@@ -1,30 +1,26 @@
-const db = require('../models/firebase.js'); 
+const { MongoClient } = require('mongodb');
 
 class PratosRepository {
+  constructor() {
+    const uri = 'mongodb+srv://<username>:<password>@cluster.mongodb.net/restaurante?retryWrites=true&w=majority';
+    this.client = new MongoClient(uri);
+    this.dbName = 'restaurante';
+  }
 
-    constructor() {}
-    async getPratos() {
-        const pratos = await db.collection('pratos').get();
-        return pratos.docs.map(doc => doc.data());
-    }
+  async getPratos() {
+    await this.client.connect();
+    const database = this.client.db(this.dbName);
+    const pratos = database.collection('pratos');
+    return pratos.find().toArray();
+  }
 
-    async getPrato(id) {
-        const prato = await db.collection('pratos').doc(id).get();
-        return prato.data();
-    }
-
-    async createPrato(prato) {
-        console.log("Prato recebido para o banco:", prato);
-        await db.collection('pratos').add(prato);
-    }
-
-    async updatePrato(id, prato) {
-        await db.collection('pratos').doc(id).update(prato);
-    }
-
-    async deletePrato(id) {
-        await db.collection('pratos').doc(id).delete();
-    }
+  async createPrato(prato) {
+    await this.client.connect();
+    const database = this.client.db(this.dbName);
+    const pratos = database.collection('pratos');
+    const result = await pratos.insertOne(prato);
+    return result.ops[0];
+  }
 }
 
 module.exports = PratosRepository;

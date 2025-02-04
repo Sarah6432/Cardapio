@@ -1,19 +1,19 @@
 # Aromas - Cardápio
 Bem-vindo ao Aromas, um site de cardápio digital moderno e interativo, no Aromas, você pode explorar pratos, gerenciar seu carrinho de compras, cadastrar-se e realizar pedidos com facilidade. O aromas é um auxílio para restaurantes que querem facilitar suas vendas e melhorar o atendimento ao cliente 🍽✨
 
-## �� Funcionalidades
+## 🚀  Funcionalidades
 ✅Conexão com Firebase: Integração completa para armazenar e gerenciar dados de usuários, pratos e pedidos.
 ✅Autenticação: Cadastro e login seguros para novos e antigos usuários.
 ✅Gerenciamento de Pratos: Adicione, visualize e edite pratos diretamente no sistema.
 ✅Recebimento de Pedidos: Sistema intuitivo para finalizar compras com dados completos do cliente.
 
-## ��️ Tecnologias Utilizadas
+## 🛠 Tecnologias Utilizadas
 Este projeto foi desenvolvido com as seguintes tecnologias:
 - [Node.js](https://nodejs.org/pt))
 - [Html]((https://www.w3schools.com/html/))
 - [Firebase]((https://firebase.google.com/?hl=pt-br))
 - [Css]((https://code.visualstudio.com/docs/languages/css))
-## �� Como Instalar e Executar o Projeto
+## 🎯 Como Instalar e Executar o Projeto
 ### Pré-requisitos
 - Ter o node.js instalado 
 ### Passos
@@ -41,7 +41,7 @@ se você já possui uma conta no Aromas, basta fazer login para concluir a compr
 4. Cadastro de Usuário
 Caso ainda não tenha uma conta, realize o cadastro preenchendo os campos necessários. Após isso, faça login e finalize sua compra.
 
-�� Desenvolvimento
+🖥 Desenvolvimento
 Se quiser contribuir para o projeto, siga as etapas abaixo:
 1. Faça um fork do repositório.
 Crie uma nova branch:
